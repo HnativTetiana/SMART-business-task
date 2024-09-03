@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  color: #111111;
+  background-color: rgba(173, 216, 230, 0.5);
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.error-message {
+  font-size: 30px;
+}
+
+.filters-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.filters-list input {
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+}
+
+.table-container h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.table-container {
+  max-width: 1000px;
+  overflow: auto;
+}
+
+.users-table {
+  font-size: 20px;
+  background-color: lightcyan;
+  width: 100%;
+}
+
+.table-title {
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: rgba(0, 255, 255, 0.3);
+}
+
+.users-table th {
+  font-weight: bold;
+  background-color: lightskyblue;
+  padding: 15px;
+}
+
+.users-table td {
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 1024px) {
+  .main-title {
+    margin-bottom: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .filters-list {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .table-container {
+    max-width: 800px;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .table-container {
+    max-width: 400px;
+  }
+
+  .users-table {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px) {
+  .table-container {
+    max-width: 300px;
   }
 }
