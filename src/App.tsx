@@ -3,7 +3,7 @@ import Filters from './components/Filters.tsx';
 import UsersTable from './components/Users.tsx';
 import useFetchUsers from './hooks/useFetchUsers.ts';
 import useFilters from './hooks/useFilters.ts';
-import './App.css';
+import './styles/App.css';
 
 // Main app component
 const App = () => {

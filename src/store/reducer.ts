@@ -1,17 +1,18 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer, PayloadAction } from "@reduxjs/toolkit";
 import initialState from "./initialState.ts";
 import { setUsers, setFilters, setError } from './actions.ts';
+import { User, Filters } from '../components/Interfaces.ts';
 
 // Creating a reducer to handle user-related actions
 const usersReducer = createReducer(initialState, (builder) => {
     builder
-        .addCase(setUsers, (state, action) => {
+        .addCase(setUsers, (state, action: PayloadAction<User[] | null>) => {
             // Setting users and clearing any previous errors
             state.result = { users: action.payload, error: null };
             state.filteredUsers = action.payload || [];
         })
 
-        .addCase(setFilters, (state, action) => {
+        .addCase(setFilters, (state, action: PayloadAction<Filters>) => {
             // Applying filters to the list of users
             const { name, username, email, phone } = action.payload || {};
             state.filters = action.payload;
@@ -23,7 +24,7 @@ const usersReducer = createReducer(initialState, (builder) => {
             );
         })
 
-        .addCase(setError, (state, action) => {
+        .addCase(setError, (state, action: PayloadAction<string | null>) => {
             // Setting error in the state
             state.result = { users: null, error: action.payload };
         })

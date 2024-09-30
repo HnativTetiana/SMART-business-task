@@ -1,7 +1,7 @@
 import React from "react";
 
 // Component to render input fields for filtering users
-const FiltersList = ({ changeFieldsValue }) => {
+const FiltersList: React.FC<{ changeFieldsValue: (event: React.ChangeEvent<HTMLInputElement>) => void }> = ({ changeFieldsValue }) => {
     return (
         <ul className='filters-list'>
             <li>
